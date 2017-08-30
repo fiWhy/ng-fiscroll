@@ -1,6 +1,6 @@
 'use strict';
 require("./ng-fiscroll.scss");
-angular.module('ngScrollbar', []).directive('ngScrollbar', [
+angular.module('ngFiScroll', []).directive('ngFiScroll', [
   '$parse',
   '$window',
   '$timeout',
