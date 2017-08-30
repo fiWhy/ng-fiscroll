@@ -1,6 +1,6 @@
 {
   "name": "ng-fiscroll",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "main": "dist/ng-fiscroll.min.js",
   "description": "A custom scrollbar written in pure AngularJS",
   "scripts": {

@@ -1,10 +1,11 @@
 # FiScroll
 ## Thanks
-Plugin was rewritten from [bazinas](https://github.com/buzinas) [simple-scrollbar](https://github.com/buzinas/simple-scrollbar)
+Plugin was rewritten from [bazinas](https://github.com/buzinas)'s [simple-scrollbar](https://github.com/buzinas/simple-scrollbar)
+Example was taken from [asafdav](https://github.com/asafdav)'s [ng-scrollbar](https://github.com/asafdav/ng-scrollbar)
 ## Use
 ```html
     <div class="scrollme" 
-         ng-scrollbar
+         ng-fiscroll
          hide-scroll-on-out="true"
          hide-timeout="3000"
          is-bar-shown="barShown"
@@ -19,7 +20,6 @@ Plugin was rewritten from [bazinas](https://github.com/buzinas) [simple-scrollba
 ```javscript
    {
         'isBarShown': '=', // Model shows bar is shown
-        'touchEventWidth': '=',
         'hideScrollOnOut': '=', // Hide on mouse out / touchend
         'hideTimeout': '=', // Hide after ms 
         'rebuildOn': '@', // Recalculate scroll on handling this event

@@ -19,11 +19,11 @@
     <div class="container" ng-controller="myctrl">
 
       <div class="page-header">
-        <h1>ngScrollBar <small>example</small></h1>
+        <h1>ngFiScroll <small>example</small></h1>
       </div>
       Bar is shown: {{barShown}}
       <div class="well">
-        <div class="scrollme" ng-scrollbar rebuild-on-resize="true" hide-scroll-on-out="true" is-bar-shown="barShown" scroller-min-height="30">
+        <div class="scrollme" ng-fiscroll hide-scroll-on-out="true" is-bar-shown="barShown">
           <h1>Scroll me down!</h1>
           <p>...</p>
           <p>...</p>
@@ -156,14 +156,14 @@
           <p>...</p>
           <p>...</p>
           <p>...</p>
-          <p><a class="btn btn-primary btn-lg" role="button" href="https://github.com/asafdav/ng-scrollbar">Learn more</a></p>
+          <p><a class="btn btn-primary btn-lg" role="button" href="https://github.com/fiWhy/ng-fiscroll">Learn more</a></p>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-  var myapp = angular.module('myapp', ['ngSanitize', 'ngScrollbar']);
+  var myapp = angular.module('myapp', ['ngSanitize', 'ngFiScroll']);
 
   myapp.controller('myctrl', function ($scope) {
     $scope.$on('scrollbar.show', function(){

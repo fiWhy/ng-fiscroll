@@ -1,26 +1,24 @@
 'use strict';
 require("./ng-fiscroll.scss");
-angular.module('ngFiScroll', []).directive('ngFiScroll', [
-  '$parse',
+angular.module('ngFiScroll', []).directive('ngFiscroll', [
   '$window',
   '$timeout',
-  function ($parse, $window, $timeout) {
+  function ($window, $timeout) {
     return {
       restrict: 'A',
       replace: true,
       transclude: true,
       scope: {
         'isBarShown': '=',
-        'touchEventWidth': '=',
         'hideScrollOnOut': '=',
         'hideTimeout': '=',
-        'rebuildOnResize': '=',
         'rebuildOn': '@',
       },
       link: function (scope, element, attrs) {
         var raf = window.requestAnimationFrame || window.setImmediate || function (c) { return setTimeout(c, 0); };
         var documentBody = angular.element(document.body),
-          scrollRatio;
+          scrollRatio,
+          hideTimeout = scope.hideTimeout || 1000;
         var container = element,
           wrapper = angular.element(element.children()[0]),
           content = angular.element(wrapper.children()[0]),
@@ -29,29 +27,23 @@ angular.module('ngFiScroll', []).directive('ngFiScroll', [
 
         var touchEndTimeout;
 
-        function enableMobileDeeds() {
-          return window.innerWidth <= (scope.touchEventWidth || 768);
-        }
-
         function enableHideScroll() {
           return scope.hideScrollOnOut;
         }
 
         function notifyShow() {
-          console.log("Hello");
           $timeout.cancel(touchEndTimeout);
           scope.isBarShown = true;
-          scope.$digest();
+          scope.$apply();
           scope.$emit("scrollbar.show");
         }
 
         function notifyHide() {
-          var hideTimeout = scope.hideTimeout || 1000;
           if (enableHideScroll()) {
             touchEndTimeout = $timeout(function () {
               scope.isBarShown = false;
               scope.$emit("scrollbar.hide");
-            })
+            }, hideTimeout)
           }
         }
 
@@ -85,12 +77,13 @@ angular.module('ngFiScroll', []).directive('ngFiScroll', [
             documentBody.on('mouseup', stop);
             return false;
           });
+
           content.on("touchstart", function () {
-            enableMobileDeeds() && notifyShow();
+            notifyShow();
           });
 
           content.on("touchend", function () {
-            enableMobileDeeds() && notifyHide();
+            enableHideScroll() && notifyHide();
           });
 
           container.on("mouseleave", function () {
