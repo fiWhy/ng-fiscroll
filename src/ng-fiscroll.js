@@ -157,12 +157,12 @@ angular.module('ngFiScroll', []).directive('ngFiscroll', [
         initScrollBar(element);
 
       },
-      template: '<div class="ss-container" ng-class="{\'show-scroll\': isBarShown}"> \
+      template: '<div class="ss-container"> \
         <div class="ss-wrapper"> \
           <div class="ss-content" ng-transclude> \
           </div> \
         </div> \
-        <div class="ss-scroll"></div> \
+        <div class="ss-scroll" ng-class="{\'show-scroll\': isBarShown}"></div> \
       </div>',
     };
   }

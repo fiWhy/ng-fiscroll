@@ -23,7 +23,7 @@
       </div>
       Bar is shown: {{barShown}}
       <div class="well">
-        <div class="scrollme" ng-fiscroll hide-scroll-on-out="true" is-bar-shown="barShown">
+        <div class="scrollme" ng-class="{sb: barShown}" ng-fiscroll hide-scroll-on-out="true" is-bar-shown="barShown">
           <h1>Scroll me down!</h1>
           <p>...</p>
           <p>...</p>

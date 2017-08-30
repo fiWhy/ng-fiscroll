@@ -37,14 +37,10 @@
     display: none;
 }
 
-.ss-container.show-scroll .ss-scroll {
+.show-scroll.ss-scroll {
     opacity: 1;
 }
 
 .ss-grabbed {
-    -o-user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
     user-select: none;
 }
