@@ -1,0 +1,50 @@
+{
+  "name": "ng-fiscroll",
+  "version": "1.0.0",
+  "main": "dist/ng-fiscroll.min.js",
+  "description": "A custom scrollbar written in pure AngularJS",
+  "scripts": {
+    "build": "webpack",
+    "serve": "webpack-dev-server"
+  },
+  "style": [
+    "./dist/ng-fiscroll.css"
+  ],
+  "files": [
+    "dist",
+    "src",
+    "example",
+    "README.md",
+    "LICENSE",
+    "webpack.config.js"
+  ],
+  "keywords": [
+    "angular",
+    "angularjs",
+    "scrollbar"
+  ],
+  "homepage": "https://github.com/fiWhy/ng-fiscroll",
+  "bugs": "https://github.com/fiWhy/ng-fiscroll/issues",
+  "author": {
+    "name": "Denis Buryachkovsky",
+    "email": "zekatsi5@gmail.com",
+    "url": "https://github.com/fiWhy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fiWhy/ng-fiscroll.git"
+  },
+  "licenses": [],
+  "devDependencies": {
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.0",
+    "postcss-loader": "^2.0.5",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.2",
+    "style-loader": "^0.13.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  }
+}
